@@ -153,6 +153,19 @@
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
   .intro{color:var(--dim);font-size:13.5px;margin:16px 2px 4px;max-width:760px}
   .intro b{color:var(--ink)}
+
+  /* platform export toolbar */
+  .exports{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--panel);
+       border:2px solid var(--line);border-radius:var(--radius);padding:14px 18px;margin:4px 2px 24px;
+       box-shadow:7px 7px 0 var(--green)}
+  .exports .xlabel{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;color:var(--ink)}
+  .exports a{font-size:13px;font-weight:800;color:#000;text-decoration:none;border:2px solid #000;
+       border-radius:9px;padding:8px 14px;transition:.12s;box-shadow:3px 3px 0 var(--line)}
+  .exports a:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--line)}
+  .exports a.shopify{background:var(--green)}
+  .exports a.merchant{background:var(--blue)}
+  .exports a.meta{background:var(--pink)}
+  .exports .xnote{font-size:11.5px;color:var(--dim);width:100%}
 </style>
 </head>
 <body>
@@ -216,6 +229,8 @@
         <th class="num">Tokens</th><th class="num">Credits</th><th class="num">Est. cost</th>
       </tr></thead><tbody id="lledgerBody"></tbody></table>
     </div>
+
+    <div class="exports" id="lexports" style="display:none"></div>
 
     <div class="gallery" id="lgallery"></div>
   </div>
@@ -466,6 +481,16 @@ function renderListings(s){
     (s.stage==="listing_copy"?"LLM writing SEO + choosing enhancement params…":
      s.stage==="cleaning"?"Magnific cleaning photos (bg → relight → upscale)…":s.stage));
   if(s.ledger_summary) renderLedger(s,"#lledger","#lheadStat","#lledgerBody");
+  // one-click platform feeds, once the run is done
+  if(s.status==="done" && s.run_id){
+    const x=$("#lexports");
+    x.innerHTML=`<span class="xlabel">Export all ${s.items.length} listings →</span>`+
+      `<a class="shopify" href="/listings/${s.run_id}/export/shopify" download>⬇ Shopify CSV</a>`+
+      `<a class="merchant" href="/listings/${s.run_id}/export/merchant" download>⬇ Google Merchant feed</a>`+
+      `<a class="meta" href="/listings/${s.run_id}/export/meta" download>⬇ Meta catalog CSV</a>`+
+      `<span class="xnote">Import-ready files: Shopify product import · Google Merchant Center (free Shopping listings) · Meta Commerce Manager catalog. Live API push (Admin GraphQL / Content API / Marketing API) plugs into the same publisher layer.</span>`;
+    x.style.display="flex";
+  }
   const g=$("#lgallery");
   (s.items||[]).forEach(it=>{
     let card=document.getElementById("lcard-"+it.id);

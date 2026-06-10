@@ -9,8 +9,8 @@ import os
 import uuid
 
 from dotenv import load_dotenv
-from fastapi import BackgroundTasks, FastAPI, HTTPException
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi import BackgroundTasks, FastAPI, HTTPException, Request
+from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -23,6 +23,7 @@ from . import listing_factory  # noqa: E402
 from .ledger import summarize  # noqa: E402
 from .models import ListingRun, RunState  # noqa: E402
 from .pipeline import run_pipeline  # noqa: E402
+from .publishers import exports  # noqa: E402
 
 BASE_DIR = Path(__file__).parent
 STATIC_DIR = BASE_DIR / "static"
@@ -131,3 +132,21 @@ async def get_listing_run(run_id: str):
     payload = state.model_dump()
     payload["ledger_summary"] = summarize(all_stages)
     return payload
+
+
+@app.get("/listings/{run_id}/export/{platform}")
+async def export_listing_run(run_id: str, platform: str, request: Request):
+    """No-auth platform feeds: shopify (product CSV), merchant (Google Merchant
+    Center TSV — free Shopping listings), meta (Commerce Manager catalog CSV)."""
+    state = LISTING_RUNS.get(run_id)
+    if state is None:
+        raise HTTPException(status_code=404, detail="listing run not found")
+    try:
+        content, filename, mime = exports.export(state, platform, str(request.base_url))
+    except KeyError:
+        raise HTTPException(status_code=404, detail=f"unknown platform '{platform}'")
+    return Response(
+        content,
+        media_type=mime,
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )

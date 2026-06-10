@@ -170,28 +170,30 @@ The pipeline already ends in **typed contracts** (`Creative`, `ListingItem` in [
 | `suggested_price` | `variant.price` |
 | `clean_url` image | `productCreateMedia` (staged upload) |
 
-Two integration levels: **(1) zero-auth** — a "Download Shopify CSV" export the merchant imports in two clicks; **(2) live push** — a custom-app Admin token + `publishers/shopify.py` → a "Push to Shopify" button per listing card.
+Two integration levels: **(1) zero-auth — ✅ BUILT:** a "⬇ Shopify CSV" button on the Listing Factory tab downloads an import-ready product CSV (`GET /listings/{id}/export/shopify`); **(2) live push** — a custom-app Admin token + `publishers/shopify.py` → a "Push to Shopify" button per listing card.
 
 ### 🔎 Google — a free door and a paid door
-- **Free — Google Merchant Center free listings:** push Listing Factory output as a **product feed** (Content API for Shopping). Clean image + SEO title/description/price = free Google Shopping placement, *zero ad spend*. The strongest free-distribution fit for the factory.
+- **Free — Google Merchant Center free listings — ✅ BUILT (feed):** the "⬇ Google Merchant feed" button downloads a spec-compliant TSV product feed (`id/title/description/link/image_link/price/availability/...`). Clean image + SEO title/description/price = free Google Shopping placement, *zero ad spend*. The strongest free-distribution fit for the factory; the Content API push is the live upgrade.
 - **Paid — Google Ads Performance Max:** our outputs map directly to PMax **asset groups** — headlines (≤30 chars), descriptions (≤90), images (1:1 / 1.91:1 / 4:5), videos (YouTube upload → asset link). Two one-line adaptations: the smart tier's prompt gains platform char limits (it already enforces per-channel rules), and Magnific `crop`/`resize` covers the extra aspect ratios as one more pipeline stage.
 
 ### 📱 Meta (Facebook/Instagram)
-- **Free:** Commerce Manager **catalog CSV** → Instagram/Facebook Shops.
+- **Free — ✅ BUILT (feed):** the "⬇ Meta catalog CSV" button downloads a Commerce Manager catalog file → Instagram/Facebook Shops.
 - **Paid:** Marketing API ad creatives — our 1:1 = feed, 9:16 = Stories/Reels, hero video = video ads. The clickable CTA landing modal in the UI is exactly the shape of a Meta ad's destination preview.
 
 ### 🏪 Marketplaces (Amazon SP-API, eBay, Etsy)
 Same `ListingItem` → their listing schemas; the "Copy listing" button becomes "Push to X".
 
-### The adapter layer (planned)
+### The adapter layer
 ```
 Creative / ListingItem  →  backend/publishers/
-                              base.py       # publish(item) -> {remote_id, url}
-                              shopify.py    # Admin GraphQL push
-                              merchant.py   # Google Merchant Center feed
-                              meta.py       # catalog / Marketing API
-                              exports.py    # CSV/XML feeds (no auth needed)
+                              exports.py    # ✅ BUILT: Shopify CSV, Google Merchant TSV,
+                                            #    Meta catalog CSV — no auth, one click in the UI
+                              shopify.py    # next: Admin GraphQL live push
+                              merchant.py   # next: Content API for Shopping push
+                              meta.py       # next: catalog / Marketing API push
 ```
+
+Run the Listing Factory and an **export toolbar** appears: one click downloads all listings as an import-ready file per platform — visible in the Listing Factory screenshot above.
 
 **The key point for judges:** the LLM already plans *per channel*. Extending `CHANNELS` to platform-native specs (PMax, Reels, Shopping) means the smart tier starts emitting **platform-compliant assets automatically** — no new architecture, just a longer contract.
 
