@@ -4,9 +4,9 @@
 
 Built for the **AI Inference Hack Day @ AWS Builder Loft SF** — targeting the Akamai 1st-place prize and Best Use of Magnific.
 
-Type one sentence describing a product. A two-tier LLM pipeline on **Akamai Inference Cloud** writes the campaign and — this is the core idea — **decides every Magnific enhancement parameter** (image prompt, light direction, creativity dial, upscale factor) per channel. **Magnific** then executes: text-to-image → relight → upscale → even a 5-second hero **ad video** with sound. A second feature, the **E-commerce Listing Factory**, turns messy seller photos into storefront-ready listings with LLM-written SEO copy.
+> **💎 The pitch:** Ad-in-a-Box turns one sentence into a finished multi-channel ad campaign — copy, platform-sized images, and a sound-on hero video — in under two minutes, for a tenth of a cent of LLM spend. The trick: a two-tier pipeline on **Akamai Inference Cloud** acts as the *art director, not the artist* — a cheap fast model drafts the creative, a strong model runs **exactly once** to write a typed **Magnific** parameter plan (image prompt, light direction, creativity dial, upscale factor — each with a one-sentence rationale), and Magnific's five engines execute it. The same decide→render engine powers an **E-commerce Listing Factory** that turns messy seller photos into storefront-ready listings with SEO copy — one export away from Shopify, Google Shopping, and Meta catalogs. Every token and credit is itemized in a live ledger; budget caps, graceful degradation, and offline replay of real output kept it shipping even when the venue Wi-Fi and the workshop gateway died mid-hack. It isn't a wrapper — it's a pattern for making expensive generative pixels a deliberate, priced decision.
 
-> **The novelty:** the LLM is the *art director*, not the artist. It emits structured, per-channel enhancement parameters **with a one-sentence rationale for each choice**, and a live inference ledger proves the economics of every decision.
+Type one sentence describing a product. A two-tier LLM pipeline on **Akamai Inference Cloud** writes the campaign and — this is the core idea — **decides every Magnific enhancement parameter** (image prompt, light direction, creativity dial, upscale factor) per channel. **Magnific** then executes: text-to-image → relight → upscale → even a 5-second hero **ad video** with sound. A second feature, the **E-commerce Listing Factory**, turns messy seller photos into storefront-ready listings with LLM-written SEO copy.
 
 ---
 
@@ -155,10 +155,52 @@ scripts/
 tests/                 # pipeline unit tests (pytest)
 ```
 
+## 🔌 Path to product: direct integrations with Shopify, Google & Meta
+
+The pipeline already ends in **typed contracts** (`Creative`, `ListingItem` in [`backend/models.py`](backend/models.py)) — so every platform is just an *adapter* from those objects to a platform API or feed. No re-architecture needed.
+
+### 🛍 Shopify — the Listing Factory is a Shopify product factory
+`ListingItem` maps ~1:1 onto the Shopify Admin GraphQL API:
+
+| ListingItem field | Shopify field |
+|---|---|
+| `title` | `product.title` |
+| `description` | `product.descriptionHtml` |
+| `tags` | `product.tags` |
+| `category` | `product.productType` |
+| `suggested_price` | `variant.price` |
+| `clean_url` image | `productCreateMedia` (staged upload) |
+
+Two integration levels: **(1) zero-auth** — a "Download Shopify CSV" export the merchant imports in two clicks; **(2) live push** — a custom-app Admin token + `publishers/shopify.py` → a "Push to Shopify" button per listing card.
+
+### 🔎 Google — a free door and a paid door
+- **Free — Google Merchant Center free listings:** push Listing Factory output as a **product feed** (Content API for Shopping). Clean image + SEO title/description/price = free Google Shopping placement, *zero ad spend*. The strongest free-distribution fit for the factory.
+- **Paid — Google Ads Performance Max:** our outputs map directly to PMax **asset groups** — headlines (≤30 chars), descriptions (≤90), images (1:1 / 1.91:1 / 4:5), videos (YouTube upload → asset link). Two one-line adaptations: the smart tier's prompt gains platform char limits (it already enforces per-channel rules), and Magnific `crop`/`resize` covers the extra aspect ratios as one more pipeline stage.
+
+### 📱 Meta (Facebook/Instagram)
+- **Free:** Commerce Manager **catalog CSV** → Instagram/Facebook Shops.
+- **Paid:** Marketing API ad creatives — our 1:1 = feed, 9:16 = Stories/Reels, hero video = video ads. The clickable CTA landing modal in the UI is exactly the shape of a Meta ad's destination preview.
+
+### 🏪 Marketplaces (Amazon SP-API, eBay, Etsy)
+Same `ListingItem` → their listing schemas; the "Copy listing" button becomes "Push to X".
+
+### The adapter layer (planned)
+```
+Creative / ListingItem  →  backend/publishers/
+                              base.py       # publish(item) -> {remote_id, url}
+                              shopify.py    # Admin GraphQL push
+                              merchant.py   # Google Merchant Center feed
+                              meta.py       # catalog / Marketing API
+                              exports.py    # CSV/XML feeds (no auth needed)
+```
+
+**The key point for judges:** the LLM already plans *per channel*. Extending `CHANNELS` to platform-native specs (PMax, Reels, Shopping) means the smart tier starts emitting **platform-compliant assets automatically** — no new architecture, just a longer contract.
+
 ## 🏆 Why this should win
 
 1. **A real insight, not a wrapper:** separating *deciding* (LLM) from *rendering* (Magnific) — with the decision expressed as a typed, rationale-carrying parameter plan — is a pattern, not a prompt.
 2. **Both sponsors used where they're strongest:** Akamai for tiered, cost-engineered inference (provable in the ledger); Magnific for five different engines including video.
 3. **Two products, one engine:** the ad studio *and* the listing factory share the same decide→render architecture.
-4. **Ships under pressure:** budget caps, graceful degradation, offline replay of real output — and when the venue gateway died, we re-provisioned inference on Akamai cloud via API mid-hackathon.
-5. **Everything on this page is reproducible from the repo in one minute, offline.**
+4. **A clear path to product:** the typed outputs are one adapter away from Shopify, Google Merchant free listings, PMax, and Meta catalogs (see Integrations above).
+5. **Ships under pressure:** budget caps, graceful degradation, offline replay of real output — and when the venue gateway died, we re-provisioned inference on Akamai cloud via API mid-hackathon.
+6. **Everything on this page is reproducible from the repo in one minute, offline.**
