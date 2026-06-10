@@ -84,18 +84,17 @@ Pipeline per listing: `remove background → studio relight → upscale` + SEO t
 
 ```mermaid
 flowchart LR
-    A["Brief<br/>(one sentence)"] --> B["fast tier<br/>Qwen3-8B on Akamai<br/>6 concepts"]
-    B --> C["smart tier<br/>Qwen3-14B on Akamai<br/>runs ONCE: picks 3 +<br/>writes Magnific params"]
-    C --> D["Magnific Mystic<br/>text-to-image draft"]
-    D --> E["Magnific Relight<br/>LLM-chosen lighting"]
-    E --> F["Magnific Upscaler<br/>LLM-chosen creativity/factor"]
-    E --> G["Magnific Video<br/>5s hero ad w/ sound"]
-    F --> H["UI: before/after slider,<br/>clickable CTAs, ledger"]
+    A["One-sentence brief"] --> B["Fast tier: Qwen3-8B on Akamai writes 6 concepts"]
+    B --> C["Smart tier: Qwen3-14B runs ONCE, picks 3 and writes Magnific params"]
+    C --> D["Magnific Mystic text-to-image draft"]
+    D --> E["Magnific Relight with LLM-chosen lighting"]
+    E --> F["Magnific Upscaler with LLM-chosen creativity and factor"]
+    E --> G["Magnific Video: 5s hero ad with sound"]
+    F --> H["UI: before-after slider, clickable CTAs, ledger"]
     G --> H
-
-    I["Messy seller photos"] --> J["smart tier: SEO copy +<br/>per-image enhancement plan"]
-    J --> K["Magnific: bg removal →<br/>relight → upscale"]
-    K --> L["Storefront listings<br/>(copy-paste ready)"]
+    I["Messy seller photos"] --> J["Smart tier: SEO copy plus per-image enhancement plan"]
+    J --> K["Magnific: bg removal, relight, upscale"]
+    K --> L["Storefront-ready listings"]
 ```
 
 - **Backend:** FastAPI + httpx, async pipeline with per-creative concurrency (semaphore-bounded), in-memory run store, polling API (`POST /run`, `GET /run/{id}`, `POST /listings`, `GET /listings/{id}`)
