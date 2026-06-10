@@ -1,0 +1,247 @@
+{
+  "run_id": "demo_perfume",
+  "brief": "A luxury eau de parfum in a faceted crystal bottle, warm amber fragrance, elegant and premium.",
+  "status": "done",
+  "stage": "done",
+  "demo_mode": true,
+  "concepts": [
+    {
+      "id": "c1",
+      "channel": "instagram_square",
+      "headline": "Amber. Distilled.",
+      "body": "A warm amber eau de parfum in hand-cut crystal. One spritz, an entire evening.",
+      "cta": "Discover the scent",
+      "visual_concept": "Macro of the faceted crystal bottle on dark silk, golden liquid glowing, soft caustic light patterns."
+    },
+    {
+      "id": "c2",
+      "channel": "story_vertical",
+      "headline": "Wear the Golden Hour",
+      "body": "Warm amber, soft musk, and a trace of smoke. Bottled dusk.",
+      "cta": "Find your evening",
+      "visual_concept": "Vertical hero of the bottle on a marble ledge at sunset, long shadows, city bokeh behind."
+    },
+    {
+      "id": "c6",
+      "channel": "billboard_wide",
+      "headline": "Crafted to Linger",
+      "body": "Twelve hours of warmth from a single drop. The new amber eau de parfum.",
+      "cta": "Experience it",
+      "visual_concept": "Wide cinematic shot of the bottle center-stage among floating amber ribbons and mist, dark backdrop."
+    }
+  ],
+  "creatives": [
+    {
+      "concept": {
+        "id": "c1",
+        "channel": "instagram_square",
+        "headline": "Amber. Distilled.",
+        "body": "A warm amber eau de parfum in hand-cut crystal. One spritz, an entire evening.",
+        "cta": "Discover the scent",
+        "visual_concept": "Macro of the faceted crystal bottle on dark silk, golden liquid glowing, soft caustic light patterns."
+      },
+      "plan": {
+        "concept_id": "c1",
+        "image_prompt": "Macro shot of a luxury faceted crystal perfume bottle on dark silk fabric, golden amber liquid glowing from within, soft caustic light refractions, premium fragrance advertising, dramatic dark background, ultra detailed",
+        "aspect_ratio": "square_1_1",
+        "relight_prompt": "warm golden key light from camera left through the bottle, sparkling caustics, soft amber fill",
+        "creativity": 3,
+        "upscale_factor": "4x",
+        "rationale": "Crystal facets reward macro detail, so 4x with +3 creativity lets Magnific carve the glass while the warm key makes the amber liquid glow."
+      },
+      "draft_url": "/static/runs/demo_perfume/c1_draft.jpg",
+      "relit_url": "/static/runs/demo_perfume/c1_relit.png",
+      "final_url": "/static/runs/demo_perfume/c1_final.jpg",
+      "video_url": null,
+      "status": "done",
+      "stages": [
+        {
+          "stage": "draft",
+          "model_or_engine": "magnific:mystic",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 1,
+          "ok": true,
+          "note": "Magnific MCP (generate -> relight -> upscale)"
+        },
+        {
+          "stage": "relight",
+          "model_or_engine": "magnific:relight",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 2,
+          "ok": true,
+          "note": "warm golden key light from camera left through the bottle, sparkling caustics, soft amber fill"
+        },
+        {
+          "stage": "upscale",
+          "model_or_engine": "magnific:upscaler",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 3,
+          "ok": true,
+          "note": "4x, creativity +3"
+        }
+      ]
+    },
+    {
+      "concept": {
+        "id": "c2",
+        "channel": "story_vertical",
+        "headline": "Wear the Golden Hour",
+        "body": "Warm amber, soft musk, and a trace of smoke. Bottled dusk.",
+        "cta": "Find your evening",
+        "visual_concept": "Vertical hero of the bottle on a marble ledge at sunset, long shadows, city bokeh behind."
+      },
+      "plan": {
+        "concept_id": "c2",
+        "image_prompt": "Vertical hero shot of a faceted crystal perfume bottle on a marble ledge at sunset, long warm shadows, blurred golden city lights bokeh in the background, cinematic luxury fragrance ad",
+        "aspect_ratio": "story_9_16",
+        "relight_prompt": "low golden-hour sun from camera right, long soft shadows, warm rim light on the bottle edges, cool dusk ambient",
+        "creativity": 2,
+        "upscale_factor": "4x",
+        "rationale": "Stories sell mood; +2 keeps the bottle's facets accurate while the sunset relight delivers the 'golden hour' promise of the headline."
+      },
+      "draft_url": "/static/runs/demo_perfume/c2_draft.jpg",
+      "relit_url": "/static/runs/demo_perfume/c2_relit.png",
+      "final_url": "/static/runs/demo_perfume/c2_final.jpg",
+      "video_url": null,
+      "status": "done",
+      "stages": [
+        {
+          "stage": "draft",
+          "model_or_engine": "magnific:mystic",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 1,
+          "ok": true,
+          "note": "Magnific MCP (generate -> relight -> upscale)"
+        },
+        {
+          "stage": "relight",
+          "model_or_engine": "magnific:relight",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 2,
+          "ok": true,
+          "note": "low golden-hour sun from camera right, long soft shadows, warm rim light on the bottle edges, cool dusk ambient"
+        },
+        {
+          "stage": "upscale",
+          "model_or_engine": "magnific:upscaler",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 3,
+          "ok": true,
+          "note": "4x, creativity +2"
+        }
+      ]
+    },
+    {
+      "concept": {
+        "id": "c6",
+        "channel": "billboard_wide",
+        "headline": "Crafted to Linger",
+        "body": "Twelve hours of warmth from a single drop. The new amber eau de parfum.",
+        "cta": "Experience it",
+        "visual_concept": "Wide cinematic shot of the bottle center-stage among floating amber ribbons and mist, dark backdrop."
+      },
+      "plan": {
+        "concept_id": "c6",
+        "image_prompt": "Wide cinematic shot of a luxury faceted crystal perfume bottle center stage, swirling amber silk ribbons and golden mist floating around it, dramatic dark studio backdrop, high-end fragrance billboard advertising, photorealistic",
+        "aspect_ratio": "wide_16_9",
+        "relight_prompt": "dramatic warm spotlight from above, deep shadows, amber glow through the glass, faint cool edge light",
+        "creativity": 5,
+        "upscale_factor": "8x",
+        "rationale": "A billboard hero earns 8x print detail, and +5 creativity lets Magnific invent the silk-and-mist drama around the rigidly accurate bottle."
+      },
+      "draft_url": "/static/runs/demo_perfume/c6_draft.jpg",
+      "relit_url": "/static/runs/demo_perfume/c6_relit.png",
+      "final_url": "/static/runs/demo_perfume/c6_final.jpg",
+      "video_url": "/static/runs/demo_perfume/c6_video.mp4",
+      "status": "done",
+      "stages": [
+        {
+          "stage": "draft",
+          "model_or_engine": "magnific:mystic",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 1,
+          "ok": true,
+          "note": "Magnific MCP (generate -> relight -> upscale)"
+        },
+        {
+          "stage": "relight",
+          "model_or_engine": "magnific:relight",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 2,
+          "ok": true,
+          "note": "dramatic warm spotlight from above, deep shadows, amber glow through the glass, faint cool edge light"
+        },
+        {
+          "stage": "upscale",
+          "model_or_engine": "magnific:upscaler",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 3,
+          "ok": true,
+          "note": "8x, creativity +5"
+        },
+        {
+          "stage": "video",
+          "model_or_engine": "magnific:seedance-pro-2.0",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 20,
+          "ok": true,
+          "note": "image->video, 5s 1080p hero ad"
+        }
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "stage": "concepts",
+      "model_or_engine": "fast:Qwen/Qwen3-8B-FP8",
+      "latency_ms": 6550,
+      "tokens_in": 203,
+      "tokens_out": 547,
+      "est_cost_usd": 7.5e-05,
+      "credits": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "stage": "param_plan",
+      "model_or_engine": "smart:Qwen/Qwen3-14B-FP8",
+      "latency_ms": 8820,
+      "tokens_in": 690,
+      "tokens_out": 489,
+      "est_cost_usd": 0.001179,
+      "credits": 0,
+      "ok": true,
+      "note": ""
+    }
+  ]
+}

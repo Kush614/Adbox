@@ -1,0 +1,247 @@
+{
+  "run_id": "demo_shoe",
+  "brief": "A lightweight trail running shoe with grippy all-terrain soles.",
+  "status": "done",
+  "stage": "done",
+  "demo_mode": true,
+  "concepts": [
+    {
+      "id": "c1",
+      "channel": "instagram_square",
+      "headline": "Lightweight. Agile. All-Terrain.",
+      "body": "Step confidently on any trail with grippy soles and a lightweight design that moves with you.",
+      "cta": "Run Freely",
+      "visual_concept": "A trail runner mid-stride on a rocky path, focused and determined, with the shoe's soles clearly showing grip on uneven terrain."
+    },
+    {
+      "id": "c2",
+      "channel": "story_vertical",
+      "headline": "Tackle Any Terrain.",
+      "body": "Lightweight trail running shoes with all-terrain soles for maximum grip and performance.",
+      "cta": "Get Yours",
+      "visual_concept": "Close-up of the shoe's sole with dirt and rocks, showing grip, set against a mountain backdrop."
+    },
+    {
+      "id": "c6",
+      "channel": "billboard_wide",
+      "headline": "Lightweight. Grippy. Powerful.",
+      "body": "Step up your trail game with shoes built for grip, comfort, and performance.",
+      "cta": "Run Now",
+      "visual_concept": "A runner in motion on a rocky trail, mid-step, with the shoe's soles clearly showing grip on uneven ground."
+    }
+  ],
+  "creatives": [
+    {
+      "concept": {
+        "id": "c1",
+        "channel": "instagram_square",
+        "headline": "Lightweight. Agile. All-Terrain.",
+        "body": "Step confidently on any trail with grippy soles and a lightweight design that moves with you.",
+        "cta": "Run Freely",
+        "visual_concept": "A trail runner mid-stride on a rocky path, focused and determined, with the shoe's soles clearly showing grip on uneven terrain."
+      },
+      "plan": {
+        "concept_id": "c1",
+        "image_prompt": "A trail runner mid-stride on a rocky path, focused and determined, with the shoe's soles clearly showing grip on uneven terrain. The scene is dynamic, with natural lighting from above, emphasizing the texture of the shoe's sole and the rugged trail. Style: photorealistic, cinematic.",
+        "aspect_ratio": "square_1_1",
+        "relight_prompt": "soft natural daylight from above, directional shadows to highlight the shoe's sole texture, cool blue tones with warm highlights from the rocks",
+        "creativity": 2,
+        "upscale_factor": "4x",
+        "rationale": "Instagram square format demands a dynamic, centered composition with clear product focus; creativity is moderate to ensure accurate depiction of the shoe's grip and lightweight design."
+      },
+      "draft_url": "/static/runs/demo_shoe/c1_draft.jpg",
+      "relit_url": "/static/runs/demo_shoe/c1_relit.png",
+      "final_url": "/static/runs/demo_shoe/c1_final.jpg",
+      "video_url": null,
+      "status": "done",
+      "stages": [
+        {
+          "stage": "draft",
+          "model_or_engine": "magnific:mystic",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 1,
+          "ok": true,
+          "note": "Magnific MCP (generate -> relight -> upscale)"
+        },
+        {
+          "stage": "relight",
+          "model_or_engine": "magnific:relight",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 2,
+          "ok": true,
+          "note": "soft natural daylight from above, directional shadows to highlight the shoe's sole texture, cool blue tones with warm hi"
+        },
+        {
+          "stage": "upscale",
+          "model_or_engine": "magnific:upscaler",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 3,
+          "ok": true,
+          "note": "4x, creativity +2"
+        }
+      ]
+    },
+    {
+      "concept": {
+        "id": "c2",
+        "channel": "story_vertical",
+        "headline": "Tackle Any Terrain.",
+        "body": "Lightweight trail running shoes with all-terrain soles for maximum grip and performance.",
+        "cta": "Get Yours",
+        "visual_concept": "Close-up of the shoe's sole with dirt and rocks, showing grip, set against a mountain backdrop."
+      },
+      "plan": {
+        "concept_id": "c2",
+        "image_prompt": "Close-up of the shoe's sole with dirt and rocks, showing grip, set against a mountain backdrop. The sole is in sharp focus, with natural textures and dirt embedded in the treads. Style: hyper-realistic, with a dramatic mountain landscape in the background.",
+        "aspect_ratio": "story_9_16",
+        "relight_prompt": "dramatic side lighting from the left, creating deep shadows and high contrast, cool blue tones with warm highlights from the rocks",
+        "creativity": 1,
+        "upscale_factor": "4x",
+        "rationale": "Story vertical format allows for a tall, immersive backdrop; low creativity ensures the product's grip details are accurately rendered for close-up inspection."
+      },
+      "draft_url": "/static/runs/demo_shoe/c2_draft.png",
+      "relit_url": "/static/runs/demo_shoe/c2_relit.png",
+      "final_url": "/static/runs/demo_shoe/c2_final.jpg",
+      "video_url": null,
+      "status": "done",
+      "stages": [
+        {
+          "stage": "draft",
+          "model_or_engine": "magnific:mystic",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 1,
+          "ok": true,
+          "note": "Magnific MCP (generate -> relight -> upscale)"
+        },
+        {
+          "stage": "relight",
+          "model_or_engine": "magnific:relight",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 2,
+          "ok": true,
+          "note": "dramatic side lighting from the left, creating deep shadows and high contrast, cool blue tones with warm highlights from"
+        },
+        {
+          "stage": "upscale",
+          "model_or_engine": "magnific:upscaler",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 3,
+          "ok": true,
+          "note": "4x, creativity +1"
+        }
+      ]
+    },
+    {
+      "concept": {
+        "id": "c6",
+        "channel": "billboard_wide",
+        "headline": "Lightweight. Grippy. Powerful.",
+        "body": "Step up your trail game with shoes built for grip, comfort, and performance.",
+        "cta": "Run Now",
+        "visual_concept": "A runner in motion on a rocky trail, mid-step, with the shoe's soles clearly showing grip on uneven ground."
+      },
+      "plan": {
+        "concept_id": "c6",
+        "image_prompt": "A runner in motion on a rocky trail, mid-step, with the shoe's soles clearly showing grip on uneven ground. The scene is set in a forest with sunlight filtering through the trees, creating a dynamic and natural lighting effect. Style: cinematic, photorealistic.",
+        "aspect_ratio": "wide_16_9",
+        "relight_prompt": "golden-hour key light from the front-right, soft shadows, warm amber tones with cool highlights from the forest canopy",
+        "creativity": 4,
+        "upscale_factor": "8x",
+        "rationale": "Billboard wide format needs high resolution and dramatic lighting to capture motion and product detail; higher creativity enhances the visual impact for a large audience."
+      },
+      "draft_url": "/static/runs/demo_shoe/c6_draft.jpg",
+      "relit_url": "/static/runs/demo_shoe/c6_relit.png",
+      "final_url": "/static/runs/demo_shoe/c6_final.jpg",
+      "video_url": "/static/runs/demo_shoe/c6_video.mp4",
+      "status": "done",
+      "stages": [
+        {
+          "stage": "draft",
+          "model_or_engine": "magnific:mystic",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 1,
+          "ok": true,
+          "note": "Magnific MCP (generate -> relight -> upscale)"
+        },
+        {
+          "stage": "relight",
+          "model_or_engine": "magnific:relight",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 2,
+          "ok": true,
+          "note": "golden-hour key light from the front-right, soft shadows, warm amber tones with cool highlights from the forest canopy"
+        },
+        {
+          "stage": "upscale",
+          "model_or_engine": "magnific:upscaler",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 3,
+          "ok": true,
+          "note": "8x, creativity +4"
+        },
+        {
+          "stage": "video",
+          "model_or_engine": "magnific:seedance-pro-2.0",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 20,
+          "ok": true,
+          "note": "image->video, 5s 1080p hero ad"
+        }
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "stage": "concepts",
+      "model_or_engine": "fast:Qwen/Qwen3-8B-FP8",
+      "latency_ms": 5903,
+      "tokens_in": 203,
+      "tokens_out": 518,
+      "est_cost_usd": 7.2e-05,
+      "credits": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "stage": "param_plan",
+      "model_or_engine": "smart:Qwen/Qwen3-14B-FP8",
+      "latency_ms": 9164,
+      "tokens_in": 694,
+      "tokens_out": 527,
+      "est_cost_usd": 0.001221,
+      "credits": 0,
+      "ok": true,
+      "note": ""
+    }
+  ]
+}

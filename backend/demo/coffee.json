@@ -1,0 +1,247 @@
+{
+  "run_id": "demo_coffee",
+  "brief": "A specialty single-origin coffee bag, hand-roasted in small batches.",
+  "status": "done",
+  "stage": "done",
+  "demo_mode": true,
+  "concepts": [
+    {
+      "id": "c1",
+      "channel": "instagram_square",
+      "headline": "Hand-roasted. Small batches. Big flavor.",
+      "body": "Each bag is a journey to the source. Experience the richness of single-origin coffee, crafted with care.",
+      "cta": "Discover now",
+      "visual_concept": "A close-up of a hand-roasted coffee bean with a rustic bag in the background, golden light highlighting the texture."
+    },
+    {
+      "id": "c2",
+      "channel": "story_vertical",
+      "headline": "Sip the story of the bean.",
+      "body": "Single-origin, small-batch roasted. Every cup tells a tale of passion and precision.",
+      "cta": "Explore the story",
+      "visual_concept": "A person sipping coffee with a close-up of the bag and a map showing the origin of the beans."
+    },
+    {
+      "id": "c6",
+      "channel": "billboard_wide",
+      "headline": "Single-origin. Small-batch. Extraordinary.",
+      "body": "Each bag is a masterpiece of flavor. Hand-roasted with passion for the perfect cup.",
+      "cta": "Savor the craft",
+      "visual_concept": "A bold, textured shot of a coffee bag with a steaming cup and a sunlit backdrop highlighting the craftsmanship."
+    }
+  ],
+  "creatives": [
+    {
+      "concept": {
+        "id": "c1",
+        "channel": "instagram_square",
+        "headline": "Hand-roasted. Small batches. Big flavor.",
+        "body": "Each bag is a journey to the source. Experience the richness of single-origin coffee, crafted with care.",
+        "cta": "Discover now",
+        "visual_concept": "A close-up of a hand-roasted coffee bean with a rustic bag in the background, golden light highlighting the texture."
+      },
+      "plan": {
+        "concept_id": "c1",
+        "image_prompt": "A close-up of a hand-roasted coffee bean with a rustic coffee bag in the background, golden light highlighting the texture of the bean and the bag, cinematic lighting, natural textures, warm tones, high detail",
+        "aspect_ratio": "square_1_1",
+        "relight_prompt": "warm golden-hour key light from camera right, soft wraparound shadows, amber rim light",
+        "creativity": 3,
+        "upscale_factor": "4x",
+        "rationale": "The golden-hour lighting and rustic textures align with the product's small-batch, hand-roasted identity, while the square format suits Instagram's visual storytelling."
+      },
+      "draft_url": "/static/runs/demo_coffee/c1_draft.jpg",
+      "relit_url": "/static/runs/demo_coffee/c1_relit.png",
+      "final_url": "/static/runs/demo_coffee/c1_final.jpg",
+      "video_url": null,
+      "status": "done",
+      "stages": [
+        {
+          "stage": "draft",
+          "model_or_engine": "magnific:mystic",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 1,
+          "ok": true,
+          "note": "Magnific MCP (generate -> relight -> upscale)"
+        },
+        {
+          "stage": "relight",
+          "model_or_engine": "magnific:relight",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 2,
+          "ok": true,
+          "note": "warm golden-hour key light from camera right, soft wraparound shadows, amber rim light"
+        },
+        {
+          "stage": "upscale",
+          "model_or_engine": "magnific:upscaler",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 3,
+          "ok": true,
+          "note": "4x, creativity +3"
+        }
+      ]
+    },
+    {
+      "concept": {
+        "id": "c2",
+        "channel": "story_vertical",
+        "headline": "Sip the story of the bean.",
+        "body": "Single-origin, small-batch roasted. Every cup tells a tale of passion and precision.",
+        "cta": "Explore the story",
+        "visual_concept": "A person sipping coffee with a close-up of the bag and a map showing the origin of the beans."
+      },
+      "plan": {
+        "concept_id": "c2",
+        "image_prompt": "A person sipping coffee with a close-up of the coffee bag and a map showing the origin of the beans, soft natural lighting, warm tones, cinematic composition, focus on the person and the bag",
+        "aspect_ratio": "story_9_16",
+        "relight_prompt": "soft natural daylight from camera left, warm ambient light, subtle shadows",
+        "creativity": 2,
+        "upscale_factor": "4x",
+        "rationale": "The story format and soft lighting emphasize the narrative of the bean's origin, aligning with the headline 'Sip the story of the bean.'"
+      },
+      "draft_url": "/static/runs/demo_coffee/c2_draft.jpg",
+      "relit_url": "/static/runs/demo_coffee/c2_relit.png",
+      "final_url": "/static/runs/demo_coffee/c2_final.jpg",
+      "video_url": null,
+      "status": "done",
+      "stages": [
+        {
+          "stage": "draft",
+          "model_or_engine": "magnific:mystic",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 1,
+          "ok": true,
+          "note": "Magnific MCP (generate -> relight -> upscale)"
+        },
+        {
+          "stage": "relight",
+          "model_or_engine": "magnific:relight",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 2,
+          "ok": true,
+          "note": "soft natural daylight from camera left, warm ambient light, subtle shadows"
+        },
+        {
+          "stage": "upscale",
+          "model_or_engine": "magnific:upscaler",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 3,
+          "ok": true,
+          "note": "4x, creativity +2"
+        }
+      ]
+    },
+    {
+      "concept": {
+        "id": "c6",
+        "channel": "billboard_wide",
+        "headline": "Single-origin. Small-batch. Extraordinary.",
+        "body": "Each bag is a masterpiece of flavor. Hand-roasted with passion for the perfect cup.",
+        "cta": "Savor the craft",
+        "visual_concept": "A bold, textured shot of a coffee bag with a steaming cup and a sunlit backdrop highlighting the craftsmanship."
+      },
+      "plan": {
+        "concept_id": "c6",
+        "image_prompt": "A bold, textured shot of a coffee bag with a steaming cup and a sunlit backdrop highlighting the craftsmanship, dramatic lighting, high contrast, cinematic composition, dark background",
+        "aspect_ratio": "wide_16_9",
+        "relight_prompt": "dramatic directional sunlight from camera left, high contrast, deep shadows, warm golden light",
+        "creativity": 5,
+        "upscale_factor": "8x",
+        "rationale": "The billboard format and dramatic lighting elevate the product's craftsmanship, making it visually striking for large-scale print and digital ads."
+      },
+      "draft_url": "/static/runs/demo_coffee/c6_draft.jpg",
+      "relit_url": "/static/runs/demo_coffee/c6_relit.png",
+      "final_url": "/static/runs/demo_coffee/c6_final.jpg",
+      "video_url": "/static/runs/demo_coffee/c6_video.mp4",
+      "status": "done",
+      "stages": [
+        {
+          "stage": "draft",
+          "model_or_engine": "magnific:mystic",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 1,
+          "ok": true,
+          "note": "Magnific MCP (generate -> relight -> upscale)"
+        },
+        {
+          "stage": "relight",
+          "model_or_engine": "magnific:relight",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 2,
+          "ok": true,
+          "note": "dramatic directional sunlight from camera left, high contrast, deep shadows, warm golden light"
+        },
+        {
+          "stage": "upscale",
+          "model_or_engine": "magnific:upscaler",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 3,
+          "ok": true,
+          "note": "8x, creativity +5"
+        },
+        {
+          "stage": "video",
+          "model_or_engine": "magnific:seedance-pro-2.0",
+          "latency_ms": 0,
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "est_cost_usd": 0.0,
+          "credits": 20,
+          "ok": true,
+          "note": "image->video, 5s 1080p hero ad"
+        }
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "stage": "concepts",
+      "model_or_engine": "fast:Qwen/Qwen3-8B-FP8",
+      "latency_ms": 7240,
+      "tokens_in": 203,
+      "tokens_out": 583,
+      "est_cost_usd": 7.9e-05,
+      "credits": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "stage": "param_plan",
+      "model_or_engine": "smart:Qwen/Qwen3-14B-FP8",
+      "latency_ms": 8498,
+      "tokens_in": 686,
+      "tokens_out": 453,
+      "est_cost_usd": 0.001139,
+      "credits": 0,
+      "ok": true,
+      "note": ""
+    }
+  ]
+}

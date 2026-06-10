@@ -1,0 +1,287 @@
+{
+  "coffee": {
+    "run_id": "demo_coffee",
+    "brief": "A specialty single-origin coffee bag, hand-roasted in small batches.",
+    "creatives": [
+      {
+        "concept": {
+          "id": "c1",
+          "channel": "instagram_square",
+          "headline": "Hand-roasted. Small batches. Big flavor.",
+          "body": "Each bag is a journey to the source. Experience the richness of single-origin coffee, crafted with care.",
+          "cta": "Discover now",
+          "visual_concept": "A close-up of a hand-roasted coffee bean with a rustic bag in the background, golden light highlighting the texture."
+        },
+        "plan": {
+          "concept_id": "c1",
+          "image_prompt": "A close-up of a hand-roasted coffee bean with a rustic coffee bag in the background, golden light highlighting the texture of the bean and the bag, cinematic lighting, natural textures, warm tones, high detail",
+          "aspect_ratio": "square_1_1",
+          "relight_prompt": "warm golden-hour key light from camera right, soft wraparound shadows, amber rim light",
+          "creativity": 3,
+          "upscale_factor": "4x",
+          "rationale": "The golden-hour lighting and rustic textures align with the product's small-batch, hand-roasted identity, while the square format suits Instagram's visual storytelling."
+        }
+      },
+      {
+        "concept": {
+          "id": "c2",
+          "channel": "story_vertical",
+          "headline": "Sip the story of the bean.",
+          "body": "Single-origin, small-batch roasted. Every cup tells a tale of passion and precision.",
+          "cta": "Explore the story",
+          "visual_concept": "A person sipping coffee with a close-up of the bag and a map showing the origin of the beans."
+        },
+        "plan": {
+          "concept_id": "c2",
+          "image_prompt": "A person sipping coffee with a close-up of the coffee bag and a map showing the origin of the beans, soft natural lighting, warm tones, cinematic composition, focus on the person and the bag",
+          "aspect_ratio": "story_9_16",
+          "relight_prompt": "soft natural daylight from camera left, warm ambient light, subtle shadows",
+          "creativity": 2,
+          "upscale_factor": "4x",
+          "rationale": "The story format and soft lighting emphasize the narrative of the bean's origin, aligning with the headline 'Sip the story of the bean.'"
+        }
+      },
+      {
+        "concept": {
+          "id": "c6",
+          "channel": "billboard_wide",
+          "headline": "Single-origin. Small-batch. Extraordinary.",
+          "body": "Each bag is a masterpiece of flavor. Hand-roasted with passion for the perfect cup.",
+          "cta": "Savor the craft",
+          "visual_concept": "A bold, textured shot of a coffee bag with a steaming cup and a sunlit backdrop highlighting the craftsmanship."
+        },
+        "plan": {
+          "concept_id": "c6",
+          "image_prompt": "A bold, textured shot of a coffee bag with a steaming cup and a sunlit backdrop highlighting the craftsmanship, dramatic lighting, high contrast, cinematic composition, dark background",
+          "aspect_ratio": "wide_16_9",
+          "relight_prompt": "dramatic directional sunlight from camera left, high contrast, deep shadows, warm golden light",
+          "creativity": 5,
+          "upscale_factor": "8x",
+          "rationale": "The billboard format and dramatic lighting elevate the product's craftsmanship, making it visually striking for large-scale print and digital ads."
+        }
+      }
+    ],
+    "llm_stages": [
+      {
+        "stage": "concepts",
+        "model_or_engine": "fast:Qwen/Qwen3-8B-FP8",
+        "latency_ms": 7240,
+        "tokens_in": 203,
+        "tokens_out": 583,
+        "est_cost_usd": 7.9e-05,
+        "credits": 0,
+        "ok": true,
+        "note": ""
+      },
+      {
+        "stage": "param_plan",
+        "model_or_engine": "smart:Qwen/Qwen3-14B-FP8",
+        "latency_ms": 8498,
+        "tokens_in": 686,
+        "tokens_out": 453,
+        "est_cost_usd": 0.001139,
+        "credits": 0,
+        "ok": true,
+        "note": ""
+      }
+    ],
+    "ledger": {
+      "total_tokens": 1925,
+      "fast_token_pct": 40.8,
+      "smart_calls": 1,
+      "total_llm_cost_usd": 0.001218,
+      "total_credits": 0,
+      "total_latency_ms": 15738
+    }
+  },
+  "shoe": {
+    "run_id": "demo_shoe",
+    "brief": "A lightweight trail running shoe with grippy all-terrain soles.",
+    "creatives": [
+      {
+        "concept": {
+          "id": "c1",
+          "channel": "instagram_square",
+          "headline": "Lightweight. Agile. All-Terrain.",
+          "body": "Step confidently on any trail with grippy soles and a lightweight design that moves with you.",
+          "cta": "Run Freely",
+          "visual_concept": "A trail runner mid-stride on a rocky path, focused and determined, with the shoe's soles clearly showing grip on uneven terrain."
+        },
+        "plan": {
+          "concept_id": "c1",
+          "image_prompt": "A trail runner mid-stride on a rocky path, focused and determined, with the shoe's soles clearly showing grip on uneven terrain. The scene is dynamic, with natural lighting from above, emphasizing the texture of the shoe's sole and the rugged trail. Style: photorealistic, cinematic.",
+          "aspect_ratio": "square_1_1",
+          "relight_prompt": "soft natural daylight from above, directional shadows to highlight the shoe's sole texture, cool blue tones with warm highlights from the rocks",
+          "creativity": 2,
+          "upscale_factor": "4x",
+          "rationale": "Instagram square format demands a dynamic, centered composition with clear product focus; creativity is moderate to ensure accurate depiction of the shoe's grip and lightweight design."
+        }
+      },
+      {
+        "concept": {
+          "id": "c2",
+          "channel": "story_vertical",
+          "headline": "Tackle Any Terrain.",
+          "body": "Lightweight trail running shoes with all-terrain soles for maximum grip and performance.",
+          "cta": "Get Yours",
+          "visual_concept": "Close-up of the shoe's sole with dirt and rocks, showing grip, set against a mountain backdrop."
+        },
+        "plan": {
+          "concept_id": "c2",
+          "image_prompt": "Close-up of the shoe's sole with dirt and rocks, showing grip, set against a mountain backdrop. The sole is in sharp focus, with natural textures and dirt embedded in the treads. Style: hyper-realistic, with a dramatic mountain landscape in the background.",
+          "aspect_ratio": "story_9_16",
+          "relight_prompt": "dramatic side lighting from the left, creating deep shadows and high contrast, cool blue tones with warm highlights from the rocks",
+          "creativity": 1,
+          "upscale_factor": "4x",
+          "rationale": "Story vertical format allows for a tall, immersive backdrop; low creativity ensures the product's grip details are accurately rendered for close-up inspection."
+        }
+      },
+      {
+        "concept": {
+          "id": "c6",
+          "channel": "billboard_wide",
+          "headline": "Lightweight. Grippy. Powerful.",
+          "body": "Step up your trail game with shoes built for grip, comfort, and performance.",
+          "cta": "Run Now",
+          "visual_concept": "A runner in motion on a rocky trail, mid-step, with the shoe's soles clearly showing grip on uneven ground."
+        },
+        "plan": {
+          "concept_id": "c6",
+          "image_prompt": "A runner in motion on a rocky trail, mid-step, with the shoe's soles clearly showing grip on uneven ground. The scene is set in a forest with sunlight filtering through the trees, creating a dynamic and natural lighting effect. Style: cinematic, photorealistic.",
+          "aspect_ratio": "wide_16_9",
+          "relight_prompt": "golden-hour key light from the front-right, soft shadows, warm amber tones with cool highlights from the forest canopy",
+          "creativity": 4,
+          "upscale_factor": "8x",
+          "rationale": "Billboard wide format needs high resolution and dramatic lighting to capture motion and product detail; higher creativity enhances the visual impact for a large audience."
+        }
+      }
+    ],
+    "llm_stages": [
+      {
+        "stage": "concepts",
+        "model_or_engine": "fast:Qwen/Qwen3-8B-FP8",
+        "latency_ms": 5903,
+        "tokens_in": 203,
+        "tokens_out": 518,
+        "est_cost_usd": 7.2e-05,
+        "credits": 0,
+        "ok": true,
+        "note": ""
+      },
+      {
+        "stage": "param_plan",
+        "model_or_engine": "smart:Qwen/Qwen3-14B-FP8",
+        "latency_ms": 9164,
+        "tokens_in": 694,
+        "tokens_out": 527,
+        "est_cost_usd": 0.001221,
+        "credits": 0,
+        "ok": true,
+        "note": ""
+      }
+    ],
+    "ledger": {
+      "total_tokens": 1942,
+      "fast_token_pct": 37.1,
+      "smart_calls": 1,
+      "total_llm_cost_usd": 0.001293,
+      "total_credits": 0,
+      "total_latency_ms": 15067
+    }
+  },
+  "perfume": {
+    "run_id": "demo_perfume",
+    "brief": "A luxury eau de parfum in a faceted crystal bottle, warm amber fragrance, elegant and premium.",
+    "creatives": [
+      {
+        "concept": {
+          "id": "c1",
+          "channel": "instagram_square",
+          "headline": "Amber. Distilled.",
+          "body": "A warm amber eau de parfum in hand-cut crystal. One spritz, an entire evening.",
+          "cta": "Discover the scent",
+          "visual_concept": "Macro of the faceted crystal bottle on dark silk, golden liquid glowing, soft caustic light patterns."
+        },
+        "plan": {
+          "concept_id": "c1",
+          "image_prompt": "Macro shot of a luxury faceted crystal perfume bottle on dark silk fabric, golden amber liquid glowing from within, soft caustic light refractions, premium fragrance advertising, dramatic dark background, ultra detailed",
+          "aspect_ratio": "square_1_1",
+          "relight_prompt": "warm golden key light from camera left through the bottle, sparkling caustics, soft amber fill",
+          "creativity": 3,
+          "upscale_factor": "4x",
+          "rationale": "Crystal facets reward macro detail, so 4x with +3 creativity lets Magnific carve the glass while the warm key makes the amber liquid glow."
+        }
+      },
+      {
+        "concept": {
+          "id": "c2",
+          "channel": "story_vertical",
+          "headline": "Wear the Golden Hour",
+          "body": "Warm amber, soft musk, and a trace of smoke. Bottled dusk.",
+          "cta": "Find your evening",
+          "visual_concept": "Vertical hero of the bottle on a marble ledge at sunset, long shadows, city bokeh behind."
+        },
+        "plan": {
+          "concept_id": "c2",
+          "image_prompt": "Vertical hero shot of a faceted crystal perfume bottle on a marble ledge at sunset, long warm shadows, blurred golden city lights bokeh in the background, cinematic luxury fragrance ad",
+          "aspect_ratio": "story_9_16",
+          "relight_prompt": "low golden-hour sun from camera right, long soft shadows, warm rim light on the bottle edges, cool dusk ambient",
+          "creativity": 2,
+          "upscale_factor": "4x",
+          "rationale": "Stories sell mood; +2 keeps the bottle's facets accurate while the sunset relight delivers the 'golden hour' promise of the headline."
+        }
+      },
+      {
+        "concept": {
+          "id": "c6",
+          "channel": "billboard_wide",
+          "headline": "Crafted to Linger",
+          "body": "Twelve hours of warmth from a single drop. The new amber eau de parfum.",
+          "cta": "Experience it",
+          "visual_concept": "Wide cinematic shot of the bottle center-stage among floating amber ribbons and mist, dark backdrop."
+        },
+        "plan": {
+          "concept_id": "c6",
+          "image_prompt": "Wide cinematic shot of a luxury faceted crystal perfume bottle center stage, swirling amber silk ribbons and golden mist floating around it, dramatic dark studio backdrop, high-end fragrance billboard advertising, photorealistic",
+          "aspect_ratio": "wide_16_9",
+          "relight_prompt": "dramatic warm spotlight from above, deep shadows, amber glow through the glass, faint cool edge light",
+          "creativity": 5,
+          "upscale_factor": "8x",
+          "rationale": "A billboard hero earns 8x print detail, and +5 creativity lets Magnific invent the silk-and-mist drama around the rigidly accurate bottle."
+        }
+      }
+    ],
+    "llm_stages": [
+      {
+        "stage": "concepts",
+        "model_or_engine": "fast:Qwen/Qwen3-8B-FP8",
+        "latency_ms": 6550,
+        "tokens_in": 203,
+        "tokens_out": 547,
+        "est_cost_usd": 7.5e-05,
+        "credits": 0,
+        "ok": true,
+        "note": ""
+      },
+      {
+        "stage": "param_plan",
+        "model_or_engine": "smart:Qwen/Qwen3-14B-FP8",
+        "latency_ms": 8820,
+        "tokens_in": 690,
+        "tokens_out": 489,
+        "est_cost_usd": 0.001179,
+        "credits": 0,
+        "ok": true,
+        "note": ""
+      }
+    ],
+    "ledger": {
+      "total_tokens": 1929,
+      "fast_token_pct": 38.9,
+      "smart_calls": 1,
+      "total_llm_cost_usd": 0.001254,
+      "total_credits": 0,
+      "total_latency_ms": 15370
+    }
+  }
+}

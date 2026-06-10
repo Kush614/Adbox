@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+*.log
+
+# Heavy source material captured from Magnific (the demo cache under
+# backend/static is the committed, servable copy).
+scripts/real_images/
+scripts/_tmp/
+
+# Live run outputs (regenerated at runtime). Keep the committed demo_* runs.
+backend/static/runs/*
+!backend/static/runs/demo_coffee/
+!backend/static/runs/demo_shoe/
+!backend/static/runs/demo_perfume/
