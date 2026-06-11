@@ -164,8 +164,14 @@ already-open Shopify admin tab showing the 3 imported products.
    tags, descriptions. Keep this admin tab open during judging.
 
 > Why `PUBLIC_ASSET_BASE` matters: Shopify fetches images **server-side** during
-> import — `localhost` links silently fail. The exporter swaps image links to a
-> public host (the repo's raw GitHub URLs) so the import pulls real pixels.
+> import — `localhost` links silently fail, and Shopify's media processor also
+> rejects `raw.githubusercontent.com` ("Media processing failed"). Use the
+> jsDelivr CDN mirror of the repo instead (already configured in `.env`):
+> `https://cdn.jsdelivr.net/gh/Kush614/Adbox@main/backend`.
+>
+> Re-importing after a failed image pass: tick **"Overwrite products that have
+> the same handle"** in the import dialog so the fixed CSV updates the existing
+> products instead of skipping them.
 
 ## 7 · Close (4:15)
 
