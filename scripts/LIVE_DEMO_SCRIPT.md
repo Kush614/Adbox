@@ -138,6 +138,35 @@ export toolbar appear.
 > Because the LLM already plans per-channel, extending the channel list to
 > PMax or Reels specs makes it emit platform-compliant assets automatically.
 
+## 6b · OPTIONAL power move: the export landing in a REAL Shopify store (+45s)
+
+Pre-stage this once before judging (see "Shopify import — how to" below), then:
+
+**[DO]** Click **⬇ Shopify CSV** (file lands in downloads bar) → Alt-Tab to the
+already-open Shopify admin tab showing the 3 imported products.
+
+**[SAY]**
+> "And this isn't a mock export — this exact file is already live in a real
+> Shopify store. Same titles, same AI-written descriptions, same Magnific-cleaned
+> images, same prices. Phone photo to purchasable product."
+
+**[DO]** Click the sneaker product → scroll its storefront preview.
+
+### Shopify import — how to (do once, ~10 min, free)
+1. **Free dev store:** partners.shopify.com → sign up (free) → Stores → *Add store* →
+   *Development store* (no card, permanent). Quick alternative: shopify.com free trial.
+2. Run the Listing Factory locally → click **⬇ Shopify CSV** (needs
+   `PUBLIC_ASSET_BASE` set in `.env` so image links are public — already configured
+   to this repo's raw GitHub base).
+3. Shopify admin → **Products → Import → Add file** → select `shopify_products.csv`
+   → **Upload and preview** → you'll see the 3 products → **Import products**.
+4. ~1 minute later: 3 active products with images (fetched from the repo), prices,
+   tags, descriptions. Keep this admin tab open during judging.
+
+> Why `PUBLIC_ASSET_BASE` matters: Shopify fetches images **server-side** during
+> import — `localhost` links silently fail. The exporter swaps image links to a
+> public host (the repo's raw GitHub URLs) so the import pulls real pixels.
+
 ## 7 · Close (4:15)
 
 **[DO]** Back to Ad Studio tab, billboard on screen.

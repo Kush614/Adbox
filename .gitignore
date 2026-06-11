@@ -15,3 +15,4 @@ backend/static/runs/*
 !backend/static/runs/demo_coffee/
 !backend/static/runs/demo_shoe/
 !backend/static/runs/demo_perfume/
+scripts/shopify_products.csv

@@ -141,8 +141,12 @@ async def export_listing_run(run_id: str, platform: str, request: Request):
     state = LISTING_RUNS.get(run_id)
     if state is None:
         raise HTTPException(status_code=404, detail="listing run not found")
+    # Platforms fetch images server-side, so localhost links won't import.
+    # PUBLIC_ASSET_BASE (e.g. the repo's raw.githubusercontent base) makes the
+    # feed's image links publicly resolvable for a real import demo.
+    base = os.getenv("PUBLIC_ASSET_BASE", "").strip() or str(request.base_url)
     try:
-        content, filename, mime = exports.export(state, platform, str(request.base_url))
+        content, filename, mime = exports.export(state, platform, base)
     except KeyError:
         raise HTTPException(status_code=404, detail=f"unknown platform '{platform}'")
     return Response(
